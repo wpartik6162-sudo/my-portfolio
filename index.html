@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Study Planner</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4ff;
+      color: #24304a;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      background-color: #3157d5;
+      color: white;
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #3157d5;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: white;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #3157d5;
+      overflow-wrap: anywhere;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 55%;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #3157d5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .progress-container {
+      background-color: #dce3ee;
+      border-radius: 10px;
+      height: 16px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      background-color: #22a06b;
+      width: 0%;
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Study Planner</h1>
+  <p>Welcome! Let's plan our study day.</p>
+
+  <h2>My Subjects</h2>
+  <ul>
+    <li>Physics</li>
+    <li>Chemistry</li>
+    <li>Mathematics</li>
+    <li>Computer Science</li>
+  </ul>
+
+  <h2>Today's Goal</h2>
+  <p>Study for at least 2 hours.</p>
+
+  <h2>Today's Tasks</h2>
+
+  <div>
+    <input
+      type="text"
+      id="newTask"
+      ```html
+<select id="taskSubject">
+  <option value="Physics">Physics</option>
+  <option value="Chemistry">Chemistry</option>
+  <option value="Mathematics">Mathematics</option>
+  <option value="Computer Science">Computer Science</option>
+</select>
+```
+
+      placeholder="Enter a study task"
+    >
+    <button type="button" id="addTask">Add Task</button>
+  </div>
+
+  <ul id="taskList">
+    <li>
+      <label>
+        <input type="checkbox">
+        Study Physics for 30 minutes
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox">
+        Practice Mathematics
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox">
+        Learn Computer Science
+      </label>
+    </li>
+  </ul>
+
+  <h2>My Progress</h2>
+  <p id="progressText">0 of 3 tasks completed</p>
+
+  <div class="progress-container">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+
+  ```html
+<script>
+  const taskList = document.getElementById("taskList");
+  const newTaskInput = document.getElementById("newTask");
+  const taskSubject = document.getElementById("taskSubject");
+  const addTaskButton = document.getElementById("addTask");
+  const progressText = document.getElementById("progressText");
+  const progressBar = document.getElementById("progressBar");
+
+  function updateProgress() {
+    const checkboxes = taskList.querySelectorAll(
+      'input[type="checkbox"]'
+    );
+
+    const completed = taskList.querySelectorAll(
+      'input[type="checkbox"]:checked'
+    ).length;
+
+    const total = checkboxes.length;
+    const percentage =
+      total === 0 ? 0 : (completed / total) * 100;
+
+    progressText.textContent =
+      completed + " of " + total + " tasks completed";
+
+    progressBar.style.width = percentage + "%";
+  }
+
+  function saveTasks() {
+    const tasks = [];
+
+    taskList.querySelectorAll("li").forEach(function (li) {
+      const checkbox = li.querySelector('input[type="checkbox"]');
+      const label = li.querySelector("label");
+
+      if (checkbox && label) {
+        tasks.push({
+          text: label.textContent.trim(),
+          completed: checkbox.checked
+        });
+      }
+    });
+
+    localStorage.setItem("studyPlannerTasks", JSON.stringify(tasks));
+  }
+
+  function loadTasks() {
+    const savedTasks = localStorage.getItem("studyPlannerTasks");
+
+    if (savedTasks === null) {
+      return;
+    }
+
+    const tasks = JSON.parse(savedTasks);
+    taskList.innerHTML = "";
+
+    tasks.forEach(function (task) {
+      const li = document.createElement("li");
+      const label = document.createElement("label");
+      const checkbox = document.createElement("input");
+const deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+deleteButton.type = "button";
+      deleteButton.addEventListener("click", function () {
+  li.remove();
+  saveTasks();
+  updateProgress();
+});
+      checkbox.type = "checkbox";
+      checkbox.checked = task.completed;
+
+      label.appendChild(checkbox);
+      li.appendChild(deleteButton);
+      label.appendChild(document.createTextNode(" " + task.text));
+      li.appendChild(label);
+      li.appendChild(deleteButton);
+      taskList.appendChild(li);
+    });
+  }
+
+  addTaskButton.addEventListener("click", function () {
+    const taskName = newTaskInput.value.trim();
+const subjectName = taskSubject.value;
+    if (taskName === "") {
+      alert("Please enter a task!");
+      newTaskInput.focus();
+      return;
+    }
+
+    const li = document.createElement("li");
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+const deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+deleteButton.type = "button";
+
+deleteButton.addEventListener("click", function () {
+  li.remove();
+  saveTasks();
+  updateProgress();
+});
+    checkbox.type = "checkbox";
+    label.appendChild(checkbox);
+    label.appendChild(
+  document.createTextNode(" [" + subjectName + "] " + taskName)
+);
+    li.appendChild(label);
+    taskList.appendChild(li);
+
+    newTaskInput.value = "";
+    saveTasks();
+    updateProgress();
+  });
+
+  taskList.addEventListener("change", function () {
+    saveTasks();
+    updateProgress();
+  });
+
+  loadTasks();
+  updateProgress();
+</script>
+```
