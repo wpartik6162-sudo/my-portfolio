@@ -3,261 +3,281 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Study Planner</title>
+  <meta name="description" content="My beginner Computer Science portfolio and coding journey.">
+  <title><h1>Pratik Waghmare</h1>
+    <p>TEST 123</p>
+<p>Future Computer Science Student</p>
+<p>Learning Coding, One Step at a Time</p></title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f4ff;
-      color: #24304a;
-      margin: 0;
-      padding: 20px;
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    h1 {
-      background-color: #3157d5;
-      color: white;
-      padding: 20px;
-      border-radius: 14px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: #f1f5f9;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 55px 20px 35px;
       text-align: center;
+      background: linear-gradient(135deg, #111c35, #172554);
+      border-bottom: 2px solid #38bdf8;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #38bdf8;
+      font-size: 2.3rem;
+    }
+
+    header p {
+      margin: 8px 0;
+      color: #cbd5e1;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: #263858;
+    }
+
+    nav a:hover {
+      background: #0284c7;
+    }
+
+    main {
+      width: 100%;
+      max-width: 850px;
+      margin: auto;
+      padding: 18px;
+    }
+
+    section {
+      background: #111c35;
+      padding: 22px;
+      margin: 22px 0;
+      border-radius: 12px;
+      border: 1px solid #263858;
     }
 
     h2 {
-      color: #3157d5;
+      color: #38bdf8;
+      margin-top: 0;
     }
 
-    ul {
-      list-style: none;
+    .highlight {
+      color: #7dd3fc;
+      font-weight: bold;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       padding: 0;
+      list-style: none;
     }
 
-    li {
-      background-color: white;
-      margin: 10px 0;
-      padding: 14px;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #3157d5;
+    .skill-list li {
+      background: #1e3a5f;
+      padding: 8px 12px;
+      border-radius: 7px;
+    }
+
+    .project {
+      background: #1b2945;
+      padding: 16px;
+      margin-top: 14px;
+      border-radius: 9px;
+      border-left: 4px solid #38bdf8;
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: #e0f2fe;
+    }
+
+    .status {
+      display: inline-block;
+      background: #164e63;
+      color: #a5f3fc;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .note {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #aab8cc;
+      border-top: 1px solid #263858;
+    }
+
+    a {
       overflow-wrap: anywhere;
     }
 
-    input[type="text"] {
-      padding: 10px;
-      width: 55%;
-      border: 1px solid #aaa;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
 
-    button {
-      padding: 10px;
-      background-color: #3157d5;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .progress-container {
-      background-color: #dce3ee;
-      border-radius: 10px;
-      height: 16px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      background-color: #22a06b;
-      width: 0%;
-      height: 100%;
-      border-radius: 10px;
-      transition: width 0.3s;
+      section {
+        padding: 17px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>My Study Planner</h1>
-  <p>Welcome! Let's plan our study day.</p>
 
-  <h2>My Subjects</h2>
-  <ul>
-    <li>Physics</li>
-    <li>Chemistry</li>
-    <li>Mathematics</li>
-    <li>Computer Science</li>
-  </ul>
+  <header>
+    <h1>Pratik Waghmare</h1>
+    <p>Future Computer Science Student</p>
+    <p>Learning Coding, One Step at a Time</p>
 
-  <h2>Today's Goal</h2>
-  <p>Study for at least 2 hours.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">My Journey</a>
+    </nav>
+  </header>
 
-  <h2>Today's Tasks</h2>
+  <main>
 
-  <div>
-    <input
-      type="text"
-      id="newTask"
-      ```html
-<select id="taskSubject">
-  <option value="Physics">Physics</option>
-  <option value="Chemistry">Chemistry</option>
-  <option value="Mathematics">Mathematics</option>
-  <option value="Computer Science">Computer Science</option>
-</select>
-```
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I am a student from India interested in Computer Science
+        and Information Technology.
+      </p>
+      <p>
+        I am beginning my coding journey and learning how to build
+        useful projects. My goal is to improve my programming,
+        problem-solving and web development skills step by step.
+      </p>
+      <p class="note">
+        I believe that consistent learning and practice can turn
+        small ideas into useful projects.
+      </p>
+    </section>
 
-      placeholder="Enter a study task"
-    >
-    <button type="button" id="addTask">Add Task</button>
-  </div>
+    <section id="skills">
+      <h2>Skills I Am Learning</h2>
+      <p>These are my current learning areas:</p>
 
-  <ul id="taskList">
-    <li>
-      <label>
-        <input type="checkbox">
-        Study Physics for 30 minutes
-      </label>
-    </li>
-    <li>
-      <label>
-        <input type="checkbox">
-        Practice Mathematics
-      </label>
-    </li>
-    <li>
-      <label>
-        <input type="checkbox">
-        Learn Computer Science
-      </label>
-    </li>
-  </ul>
+      <ul class="skill-list">
+        li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Problem Solving</li>
+        <li>Web Development</li>
+      </ul>
 
-  <h2>My Progress</h2>
-  <p id="progressText">0 of 3 tasks completed</p>
+      <p class="note">
+        I am a beginner and will update this section as I gain
+        more practice and experience.
+      </p>
+    </section>
 
-  <div class="progress-container">
-    <div id="progressBar" class="progress-bar"></div>
-  </div>
+    <section id="projects">
+      <h2>My Projects</h2>
 
-  ```html
-<script>
-  const taskList = document.getElementById("taskList");
-  const newTaskInput = document.getElementById("newTask");
-  const taskSubject = document.getElementById("taskSubject");
-  const addTaskButton = document.getElementById("addTask");
-  const progressText = document.getElementById("progressText");
-  const progressBar = document.getElementById("progressBar");
+      <div class="project">
+        <h3>Student Study Planner</h3>
+        <span class="status">Beginner Project</span>
+     <p>
+  A beginner-friendly web application designed to help students
+  organise their study tasks and monitor their progress.
+</p>
 
-  function updateProgress() {
-    const checkboxes = taskList.querySelectorAll(
-      'input[type="checkbox"]'
-    );
+<p><strong>Features:</strong></p>
+<ul>
+  <li>Add new study tasks</li>
+  <li>Mark tasks as completed</li>
+  <li>Delete tasks</li>
+  <li>Save tasks after refreshing the page using browser local storage</li>
+</ul>
 
-    const completed = taskList.querySelectorAll(
-      'input[type="checkbox"]:checked'
-    ).length;
+<p><strong>Technologies:</strong> HTML, CSS and JavaScript</p>
 
-    const total = checkboxes.length;
-    const percentage =
-      total === 0 ? 0 : (completed / total) * 100;
+<p>
+  <strong>What I learned:</strong>
+  Building an interactive web app, handling user input,
+  updating the page with JavaScript, and storing data in the browser.
+</p>
+        <p><strong>Technologies:</strong> HTML, CSS and JavaScript</p>
+        <p class="note">
+          Project goal: practise creating an interactive website
+          and understand how its features work.
+        </p>
+      </div>
 
-    progressText.textContent =
-      completed + " of " + total + " tasks completed";
+      <div class="project">
+        <h3>Future Project</h3>
+        <span class="status">Planned</span>
+        <p>
+          I plan to build more small projects as I learn programming
+          and improve my coding skills.
+        </p>
+      </div>
+    </section>
 
-    progressBar.style.width = percentage + "%";
-  }
+    <section id="journey">
+      <h2>My Learning Journey</h2>
+      <p>
+        I am starting with the basics of web development and learning
+        by building projects on my Android phone.
+      </p>
+      <p>
+        My next goals are to improve my HTML, CSS and JavaScript,
+        understand programming fundamentals, and eventually learn
+        more about Computer Science.
+      </p>
+      <p class="highlight">
+        Small steps. Regular practice. Continuous improvement.
+      </p>
+    </section>
 
-  function saveTasks() {
-    const tasks = [];
+  </main>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    Thank you for visiting my portfolio!
+    I am learning Computer Science and building projects
+    to improve my skills.
+  </p>
+  <p>
+    I will update this portfolio as I learn and create
+    more projects.
+  </p>
+</section>
+  <footer>
+    <p>My CS Portfolio</p>
+    <p>Built while learning web development.</p>
+  </footer>
 
-    taskList.querySelectorAll("li").forEach(function (li) {
-      const checkbox = li.querySelector('input[type="checkbox"]');
-      const label = li.querySelector("label");
-
-      if (checkbox && label) {
-        tasks.push({
-          text: label.textContent.trim(),
-          completed: checkbox.checked
-        });
-      }
-    });
-
-    localStorage.setItem("studyPlannerTasks", JSON.stringify(tasks));
-  }
-
-  function loadTasks() {
-    const savedTasks = localStorage.getItem("studyPlannerTasks");
-
-    if (savedTasks === null) {
-      return;
-    }
-
-    const tasks = JSON.parse(savedTasks);
-    taskList.innerHTML = "";
-
-    tasks.forEach(function (task) {
-      const li = document.createElement("li");
-      const label = document.createElement("label");
-      const checkbox = document.createElement("input");
-const deleteButton = document.createElement("button");
-deleteButton.textContent = "Delete";
-deleteButton.type = "button";
-      deleteButton.addEventListener("click", function () {
-  li.remove();
-  saveTasks();
-  updateProgress();
-});
-      checkbox.type = "checkbox";
-      checkbox.checked = task.completed;
-
-      label.appendChild(checkbox);
-      li.appendChild(deleteButton);
-      label.appendChild(document.createTextNode(" " + task.text));
-      li.appendChild(label);
-      li.appendChild(deleteButton);
-      taskList.appendChild(li);
-    });
-  }
-
-  addTaskButton.addEventListener("click", function () {
-    const taskName = newTaskInput.value.trim();
-const subjectName = taskSubject.value;
-    if (taskName === "") {
-      alert("Please enter a task!");
-      newTaskInput.focus();
-      return;
-    }
-
-    const li = document.createElement("li");
-    const label = document.createElement("label");
-    const checkbox = document.createElement("input");
-const deleteButton = document.createElement("button");
-deleteButton.textContent = "Delete";
-deleteButton.type = "button";
-
-deleteButton.addEventListener("click", function () {
-  li.remove();
-  saveTasks();
-  updateProgress();
-});
-    checkbox.type = "checkbox";
-    label.appendChild(checkbox);
-    label.appendChild(
-  document.createTextNode(" [" + subjectName + "] " + taskName)
-);
-    li.appendChild(label);
-    taskList.appendChild(li);
-
-    newTaskInput.value = "";
-    saveTasks();
-    updateProgress();
-  });
-
-  taskList.addEventListener("change", function () {
-    saveTasks();
-    updateProgress();
-  });
-
-  loadTasks();
-  updateProgress();
-</script>
-```
+</body>
+</html>
